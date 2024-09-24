@@ -1,19 +1,20 @@
 class MovieModel {
-  final double? score;
+  // final double? score;
   final Show? show;
 
   MovieModel({
-    this.score,
+    // this.score,
     this.show,
   });
 
   MovieModel.fromJson(Map<String, dynamic> json)
-      : score = json['score'] as double?,
+      : /* score = json['score'] as double?,*/
         show = (json['show'] as Map<String, dynamic>?) != null
             ? Show.fromJson(json['show'] as Map<String, dynamic>)
             : null;
 
-  Map<String, dynamic> toJson() => {'score': score, 'show': show?.toJson()};
+  Map<String, dynamic> toJson() =>
+      {/*'score': score, */ 'show': show?.toJson()};
 
   static List<MovieModel> listFromJson(List<dynamic> jsonList) {
     return jsonList.map((json) => MovieModel.fromJson(json)).toList();
@@ -21,58 +22,58 @@ class MovieModel {
 }
 
 class Show {
-  final int? id;
+  // final int? id;
   final String? url;
   final String? name;
   final String? type;
   final String? language;
   final List<String>? genres;
   final String? status;
-  final int? runtime;
-  final int? averageRuntime;
+  // final int? runtime;
+  // final int? averageRuntime;
   final String? premiered;
   final dynamic ended;
   final String? officialSite;
   final Schedule? schedule;
-  final Rating? rating;
-  final int? weight;
+
+  // final int? weight;
   final Network? network;
   final dynamic webChannel;
   final dynamic dvdCountry;
   final Externals? externals;
   final Image? image;
   final String? summary;
-  final int? updated;
+  // final int? updated;
   final Links? links;
 
   Show({
-    this.id,
+    // this.id,
     this.url,
     this.name,
     this.type,
     this.language,
     this.genres,
     this.status,
-    this.runtime,
-    this.averageRuntime,
+    // this.runtime,
+    // this.averageRuntime,
     this.premiered,
     this.ended,
     this.officialSite,
     this.schedule,
-    this.rating,
-    this.weight,
+
+    // this.weight,
     this.network,
     this.webChannel,
     this.dvdCountry,
     this.externals,
     this.image,
     this.summary,
-    this.updated,
+    // this.updated,
     this.links,
   });
 
   Show.fromJson(Map<String, dynamic> json)
-      : id = json['id'] as int?,
+      : /*id = json['id'] as int?,*/
         url = json['url'] as String?,
         name = json['name'] as String?,
         type = json['type'] as String?,
@@ -80,18 +81,16 @@ class Show {
         genres =
             (json['genres'] as List?)?.map((dynamic e) => e as String).toList(),
         status = json['status'] as String?,
-        runtime = json['runtime'] as int?,
-        averageRuntime = json['averageRuntime'] as int?,
+        // runtime = json['runtime'] as int?,
+        // averageRuntime = json['averageRuntime'] as int?,
         premiered = json['premiered'] as String?,
         ended = json['ended'],
         officialSite = json['officialSite'] as String?,
         schedule = (json['schedule'] as Map<String, dynamic>?) != null
             ? Schedule.fromJson(json['schedule'] as Map<String, dynamic>)
             : null,
-        rating = (json['rating'] as Map<String, dynamic>?) != null
-            ? Rating.fromJson(json['rating'] as Map<String, dynamic>)
-            : null,
-        weight = json['weight'] as int?,
+
+        // weight = json['weight'] as int?,
         network = (json['network'] as Map<String, dynamic>?) != null
             ? Network.fromJson(json['network'] as Map<String, dynamic>)
             : null,
@@ -104,34 +103,34 @@ class Show {
             ? Image.fromJson(json['image'] as Map<String, dynamic>)
             : null,
         summary = json['summary'] as String?,
-        updated = json['updated'] as int?,
+        // updated = json['updated'] as int?,
         links = (json['_links'] as Map<String, dynamic>?) != null
             ? Links.fromJson(json['_links'] as Map<String, dynamic>)
             : null;
 
   Map<String, dynamic> toJson() => {
-        'id': id,
+        // 'id': id,
         'url': url,
         'name': name,
         'type': type,
         'language': language,
         'genres': genres,
         'status': status,
-        'runtime': runtime,
-        'averageRuntime': averageRuntime,
+        // 'runtime': runtime,
+        // 'averageRuntime': averageRuntime,
         'premiered': premiered,
         'ended': ended,
         'officialSite': officialSite,
         'schedule': schedule?.toJson(),
-        'rating': rating?.toJson(),
-        'weight': weight,
+
+        // 'weight': weight,
         'network': network?.toJson(),
         'webChannel': webChannel,
         'dvdCountry': dvdCountry,
         'externals': externals?.toJson(),
         'image': image?.toJson(),
         'summary': summary,
-        'updated': updated,
+        // 'updated': updated,
         '_links': links?.toJson()
       };
 }
@@ -153,34 +152,21 @@ class Schedule {
   Map<String, dynamic> toJson() => {'time': time, 'days': days};
 }
 
-class Rating {
-  final double? average;
-
-  Rating({
-    this.average,
-  });
-
-  Rating.fromJson(Map<String, dynamic> json)
-      : average = json['average'] as double?;
-
-  Map<String, dynamic> toJson() => {'average': average};
-}
-
 class Network {
-  final int? id;
+  // final int? id;
   final String? name;
   final Country? country;
   final String? officialSite;
 
   Network({
-    this.id,
+    // this.id,
     this.name,
     this.country,
     this.officialSite,
   });
 
   Network.fromJson(Map<String, dynamic> json)
-      : id = json['id'] as int?,
+      : /*id = json['id'] as int?,*/
         name = json['name'] as String?,
         country = (json['country'] as Map<String, dynamic>?) != null
             ? Country.fromJson(json['country'] as Map<String, dynamic>)
@@ -188,7 +174,7 @@ class Network {
         officialSite = json['officialSite'] as String?;
 
   Map<String, dynamic> toJson() => {
-        'id': id,
+        // 'id': id,
         'name': name,
         'country': country?.toJson(),
         'officialSite': officialSite
@@ -217,22 +203,22 @@ class Country {
 
 class Externals {
   final dynamic tvrage;
-  final int? thetvdb;
+  // final int? thetvdb;
   final String? imdb;
 
   Externals({
     this.tvrage,
-    this.thetvdb,
+    // this.thetvdb,
     this.imdb,
   });
 
   Externals.fromJson(Map<String, dynamic> json)
       : tvrage = json['tvrage'],
-        thetvdb = json['thetvdb'] as int?,
+        // thetvdb = json['thetvdb'] as int?,
         imdb = json['imdb'] as String?;
 
   Map<String, dynamic> toJson() =>
-      {'tvrage': tvrage, 'thetvdb': thetvdb, 'imdb': imdb};
+      {'tvrage': tvrage, /*'thetvdb': thetvdb,*/ 'imdb': imdb};
 }
 
 class Image {
